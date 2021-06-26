@@ -17,3 +17,9 @@
 
 
 > services.AddControllersWithViews(); // enable mvc design pattern into our .netcore app
+
+> by default controller resides in the Controllers folder
+
+> having all the models in the Model folder is not mandate
+
+> the .Where(u=>'some conditiond')  returns an IEnumerable

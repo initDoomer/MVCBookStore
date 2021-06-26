@@ -46,7 +46,6 @@ namespace MVCBookStore
             {
                 endpoints.MapDefaultControllerRoute(); // default route {controller=Home}/{action=Index}/{id?}
 
-
             });
 
           
