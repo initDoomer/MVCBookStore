@@ -1,0 +1,19 @@
+﻿> example of middleware
+	
+            /*app.Use(async (context, next) =>
+            {
+
+                await context.Response.WriteAsync("This is a middleware");
+                await next(); // passes control to the next middleware n the pipeline                
+            });*/
+
+
+> lauch setting variables  are used when we are developing the app locally and 
+    will not from when we push our app into production,
+    the IWebHostEnv reads the launchsettings.json find the type of environment during production of our app
+
+> in Startup.cs 
+        env.EnvironmentName // gives the current environment name
+
+
+> services.AddControllersWithViews(); // enable mvc design pattern into our .netcore app
