@@ -16,10 +16,11 @@ namespace MVCBookStore.Controllers
             _bookRepository = new BookRepository();
         }
 
-        public List<BookModel> GetAllBook()
+        public ViewResult GetAllBook()
         {
 
-            return _bookRepository.GetAllBooks();
+            var data =  _bookRepository.GetAllBooks();
+            return View();
         }
 
         public BookModel GetBook(int id)

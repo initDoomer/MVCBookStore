@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,9 +10,20 @@ namespace MVCBookStore.Controllers
     public class HomeController: Controller
     {
 
-        public string Index()
+        public ViewResult Index()
         {
-            return " Hello from home controller";
+            Directory.GetCurrentDirectory();
+            return View();
+        }
+
+        public ViewResult AboutUs()
+        {
+            return View();
+        }
+
+        public ViewResult ContactUs()
+        {
+            return View();
         }
     }
 }

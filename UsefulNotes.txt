@@ -23,3 +23,6 @@
 > having all the models in the Model folder is not mandate
 
 > the .Where(u=>'some conditiond')  returns an IEnumerable
+
+> By default, all static files are placed inside wwwroot folder aka Content Root Folder.
+        --- accessing the root folder: <img src="~/css/"/>

@@ -40,6 +40,7 @@ namespace MVCBookStore
                 await next(); // passes control to the next middleware n the pipeline                
             });*/
 
+            app.UseStaticFiles(); // required to use static files
             app.UseRouting(); // maps the url to a particular resource, ie. enable routing
 
             app.UseEndpoints(endpoints =>
