@@ -19,6 +19,10 @@ namespace MVCBookStore
 
             services.AddControllersWithViews(); // enable mvc design pattern into our .netcore app
 
+            // use preprocessor directive for setting a condition. DEBUG: will work only in the development environment
+#if DEBUG
+            services.AddRazorPages().AddRazorRuntimeCompilation(); // enable runtime compilation
+#endif
         }
 
 

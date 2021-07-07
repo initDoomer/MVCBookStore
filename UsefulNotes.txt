@@ -26,3 +26,15 @@
 
 > By default, all static files are placed inside wwwroot folder aka Content Root Folder.
         --- accessing the root folder: <img src="~/css/"/>
+
+> by default, razor file(.cshtml) is compiled at 2 times:
+        -> build
+        -> publish
+
+> if we add runtime compilation it should only work for the dev env and not for the staging, publishing env.
+
+         ->
+         // use preprocessor directive for setting a condition.
+    #if DEBUG
+            services.AddRazorPages().AddRazorRuntimeCompilation(); // enable runtime compilation
+    #endif
