@@ -1,12 +1,10 @@
-﻿
-@{
-    Layout = "_Layout";
+﻿@{ 
+    // dynamic data = ViewBag.Data; 
+    ViewData["Title"] = "Home";
 }
-
-
 <section class="jumbotron text-center">
     <div class="container">
-        <h1>Welcome to Bookstore</h1>
+        <h1>Welcome to Bookstore </h1>
         <p class="lead text-muted">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -27,7 +25,7 @@
                 <div class="card mb-4 shadow-sm">
                     <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
                     <div class="card-body">
-                        <p class="card-text">This section will be used to display the short description of book</p>
+                        <p class="card-text">display the short description of book</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <a href="#" class="btn btn-sm btn-outline-secondary">View details</a>
@@ -69,5 +67,14 @@
     </div>
 </div>
 
+@section sc{
+    <script>
+    $(document).ready(function () {
+        console.log("making use of section");
+    });
 
+
+    </script>
+
+}
 

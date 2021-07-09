@@ -38,3 +38,40 @@
     #if DEBUG
             services.AddRazorPages().AddRazorRuntimeCompilation(); // enable runtime compilation
     #endif
+
+
+> @using MVCBookStore.Models // allows us to any type that is not directly available in our view.
+        --> @ is known as directives
+
+> by default before any view is rendered the _viewstart is executed
+        --> we can have multiple _viewstart files at folder levels as well.
+        --> _viewstart can have any code in it, and it will be executed.
+        --> scope is current folder and sub folder.
+
+> _viewimports : can be used to imports only directies that will be used by all the views
+        --> scope is current folder and sub folder.
+        --> we can have multiple _viewimports files at folder levels as well.
+
+
+> ViewBag:  is on of the most important concepts in MVC:
+        --> viewbag is used to pass any type of data from action to view:- loosely binding
+        --> we can pass multiple models i.e objects into  view using viewbag.
+        --> viewbag is gives only runtime error and no compile time error.
+
+> ViewData: pass any type of data from action to view
+        --> same purpose as viewbag: loosely binding.
+        --> data is passed as key value pairs.
+        --> ViewData["propertyName"] = Data; // inside the controller action
+        --> @ViewData["propertyName"] // inside the views
+
+        --> it is useful in passing data from views to _layout
+
+        --> ViewData Attribute has same functionality as viewdata with slight difference.
+        --> ViewData Attribute is usefult in sending info from action to  _layout.
+        --> If we pass model objects into view using viewdata we need to cast them in the views
+                eg: @{
+                        var book = ViewData["Book"] as BookModel;
+                    }
+
+
+> Dynamic views: 

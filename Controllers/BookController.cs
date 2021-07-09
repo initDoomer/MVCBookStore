@@ -20,13 +20,15 @@ namespace MVCBookStore.Controllers
         {
 
             var data =  _bookRepository.GetAllBooks();
-            return View();
+            return View(data);
         }
 
-        public BookModel GetBook(int id)
+        public ViewResult GetBook(int id)
         {
 
-            return _bookRepository.GetBookById(id);
+            var data = _bookRepository.GetBookById(id);
+
+            return View(data);
 
         }
 

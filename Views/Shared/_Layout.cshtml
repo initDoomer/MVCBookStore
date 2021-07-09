@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Book Strore MVC</title>
+    <title>@ViewData["Title"]</title>
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="~/css/StyleSheet.css" rel="stylesheet" />
-    
+
 </head>
 <body>
 
@@ -38,6 +38,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="/home/contactus">Contact</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/book/getallbook">All Books</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -57,10 +60,7 @@
 </body>
 </html>
 <script src="~/lib/jquery/jquery.js"></script>
-<script>
-    $(document).ready(function () {
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
 
-    });
+@RenderSection("sc", required: false)
 
-
-</script>

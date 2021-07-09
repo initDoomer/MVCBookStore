@@ -1,8 +1,7 @@
-﻿
-@{
-    Layout = "_Layout";
+﻿@{
+    ViewData["Title"] = "Contact Us";
+
+    var book = ViewData["Book"] as BookModel;
 }
-
-
-<h1>ContactUs</h1>
+<h1>ContactUs @book.Title</h1>
 
