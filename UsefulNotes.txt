@@ -8,7 +8,10 @@
             });*/
 
 
-> lauch setting variables  are used when we are developing the app locally and 
+> launch setting.json:
+    the current environment(development, production, staging) is written in the launchsetting.json file
+
+    lauch setting variables  are used when we are developing the app locally and 
     will not from when we push our app into production,
     the IWebHostEnv reads the launchsettings.json find the type of environment during production of our app
 
@@ -58,6 +61,7 @@
         --> we can pass multiple models i.e objects into  view using viewbag.
         --> viewbag is gives only runtime error and no compile time error.
 
+
 > ViewData: pass any type of data from action to view
         --> same purpose as viewbag: loosely binding.
         --> data is passed as key value pairs.
@@ -75,3 +79,53 @@
 
 
 > Dynamic views: 
+                display model data without using @model directive
+        --> @model directire is not mandatory when we pass model instance into views but is a good practice
+        --> we can use ExpandoObject to pass complex data into views
+        --> we can access the data in views as:
+                    eg: @Model.Id // just like we did in normal case
+                        @Model.expdadoPropName.Id // if we are using expondo 
+        --> disadvantage:
+                      no compile time error,
+                      no intellisence, not a good approach
+
+        --> generally developers avoid dynamic views
+
+
+
+> Link tag helpers:
+        --> by default all tag helpers attributers are prefixed with asp-
+        --> asp-all-rote-data is used to pass multiple parameters into the action from the view     
+        
+        --> passing fragment using  Anchor tag: with fragments we can directly go to a particular location
+                                                when we navigate to a new page.
+            
+
+        --> we can also specify fallback paths in link tags
+                asp-fallback-href="~../style.css"  // there are other attributes as well
+
+
+> Image Tag helper:
+        --> in some scenarios normal img tag can generate some problems so better to use image tag helpers.
+        --> how to handle caching using image tag helper.
+        --> image tag helpers is used to provid cache-busting behaviour for static image
+            
+                eg:  
+                    <img asp-append-version="true"  src="~/images/logo.png" />
+        image tag helper will only work if the images are hosted on the same server as our app
+
+> Environment tag helpers:
+        
+        --> it is used to render some content based on the current environment.
+        
+        ..> there are three attributes available in the evn tag helper:
+                        names, include and exclude
+
+            eg:
+                <environment names="Development">
+                    <span>Environment: Development</span>
+                </environment>
+                <environment names="Production, Staging">
+                     <span>Environment: Production or Staging</span>
+                 </environment>
+            

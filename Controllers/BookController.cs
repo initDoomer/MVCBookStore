@@ -3,6 +3,7 @@ using MVCBookStore.Models;
 using MVCBookStore.Repository;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -26,9 +27,11 @@ namespace MVCBookStore.Controllers
         public ViewResult GetBook(int id)
         {
 
-            var data = _bookRepository.GetBookById(id);
+            dynamic data1 = new ExpandoObject();
+            data1.book = _bookRepository.GetBookById(id);
+            data1.Info = "Using Dynamic Views with expando";
 
-            return View(data);
+            return View(data1);
 
         }
 

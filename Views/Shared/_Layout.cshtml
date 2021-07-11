@@ -4,8 +4,16 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewData["Title"]</title>
-    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+
+    <environment include="Development">
+        <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+        <link href="~/css/StyleSheet.css" rel="stylesheet" />
+    </environment>
+
+    <environment exclude="Development">
+        <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+        <link href="~/css/StyleSheet.css" rel="stylesheet" />
+    </environment>
 
 </head>
 <body>
@@ -14,7 +22,7 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" href="/">
-                    <img src="~/images/logo.png" width="30" height="30" />
+                    <img asp-append-version="true"  src="~/images/logo.png" width="30" height="30" />
                     Book store
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -30,17 +38,17 @@
                     </ul>
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="/">Home</a>
+                            <a class="nav-link text-dark" asp-controller="home" asp-action="index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="/home/aboutus">About</a>
+                            <a class="nav-link text-dark" asp-controller="home" asp-action="aboutus">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="/home/contactus">Contact</a>
+                            <a class="nav-link text-dark" asp-controller="home" asp-action="ContactUs">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="/book/getallbook">All Books</a>
-                        </li>
+                            <a class="nav-link text-dark" asp-controller="book" asp-action="getallbook">All Books</a>
+                        </li>                        
                     </ul>
                 </div>
             </div>
@@ -59,8 +67,12 @@
 
 </body>
 </html>
-<script src="~/lib/jquery/jquery.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<environment include="Development">
+
+        <script src="~/lib/jquery/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+</environment>
 
 @RenderSection("sc", required: false)
 
